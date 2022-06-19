@@ -10,7 +10,7 @@ const {
     untarFile
 } = require('./unpack');
 const serverless = require('serverless-http');
-
+const router = express.Router();
 var type = upload.single('file');
 
 dotenv.config();
@@ -24,7 +24,7 @@ const getRandomName = () => {
 }
 
 
-app.post('/check-norme', type, (req, res, next) => {
+router.post('/check-norme', type, (req, res, next) => {
     var randomName = getRandomName();
     var options = {
         mode: 'text',
@@ -45,5 +45,7 @@ app.post('/check-norme', type, (req, res, next) => {
 //app.listen(process.env.PORT || 3000, () => {
 //    console.log(`Server running boi on port ${process.env.PORT || 3000}`);
 //})
+
+app.use('/.netlify/functions/api', router);
 
 module.exports.handler = serverless(app);
