@@ -9,6 +9,7 @@ const app = express();
 const {
     untarFile
 } = require('./unpack');
+const serverless = require('serverless-http');
 
 var type = upload.single('file');
 
@@ -46,3 +47,5 @@ app.post('/check-norme', type, (req, res, next) => {
 //})
 
 module.exports = app;
+
+module.exports.handler = serverless(app);
