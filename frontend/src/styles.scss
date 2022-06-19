@@ -1,0 +1,47 @@
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+}
+
+.row-style {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap-it {
+    flex-wrap: wrap;
+}
+
+.cringeButton {
+    background: linear-gradient(45deg, #f0ba00, #dd8d02);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+.sherif-Sans {
+    font-family: sans-serif;
+}
+
+.cursor {
+    &:hover {
+        cursor: pointer;
+    }
+}

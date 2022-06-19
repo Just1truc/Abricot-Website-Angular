@@ -1,0 +1,23 @@
+<div style="position: absolute; height: 63%; display: flex; align-content: center; margin-top: 80px;">
+    <app-colored-space [model]="whiteSpace" style="display: flex; align-items: center;" >
+        <app-title-desc [model]="explicationBox">
+            <img src="../../assets/output2.png" class="image" style="min-width: 300px; width: 40%; border-radius: 4px;">
+        </app-title-desc>
+    </app-colored-space>
+</div>
+<app-colored-space [model]="coloredSpace" class="sherif-Sans" style="position:absolute; width: 100%; bottom: 0;">
+    <h1 class="title">
+        Use it right away !
+    </h1>
+    <p class="desc">
+        In order to use this tool, you have 2 options :
+    </p>
+    <div class="row-style center-it">
+        <a class="button row-style center-it cringeButton" style="margin-right: 3px; text-decoration: none;" href='https://github.com/Just1truc/Abricot-Norminette'>
+            <fa-icon [icon]="iconGithub" style="font-size: 15px; font-weight:100;" class="cursor"></fa-icon>
+            <a style="margin-left: 10px; color: white; font-size: 15px;" class="no_underline">Github</a>
+        </a>
+        <p style="margin-left: 10px; font-size: 40px; margin-top: 10px"> | </p>
+        <button class="cringeButton" style="display: flex; align-self: center; margin-left: 15px;" routerLink="/online-normi" >Try it online</button>
+    </div>
+</app-colored-space>

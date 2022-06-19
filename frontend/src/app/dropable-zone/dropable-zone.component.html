@@ -1,0 +1,7 @@
+<div style="display:flex ;justify-content: center; width: 100%; padding: 60px; box-sizing: border-box">
+    <label for="sus" type="button" class="sherif-Sans chooseFile" style="margin-top: 80px; flex-direction: column;">
+        <fa-icon [icon]="uploadIcon" style="font-size: xx-large;"></fa-icon>
+        <span style="font-weight: thin; max-width: 80%; text-align: center;" class="size-it" >upload a folder (.tar)</span>
+        <input id="sus" class="visuallyhidden" type="file" (change)="onChange($event)"/> 
+    </label>
+</div>

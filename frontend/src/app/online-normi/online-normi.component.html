@@ -1,0 +1,17 @@
+<div>
+    <app-dropable-zone (dropValueEvent)="dropFunction($event)">
+    </app-dropable-zone>
+</div>
+<div style="display:flex; width:100%; justify-content: center; align-items: center; flex-wrap: wrap;">
+    <h3 class="sherif-Sans" style="font-weight:400;">Selected folder : {{folderName || "No folder selected yet"}}</h3>
+    <button class="cringeButton button-style" style="margin: 30px" (click)="onStart()">
+        Start
+    </button>
+</div>
+<div style="padding: 60px">
+    <h1 class="title sherif-Sans">
+        OUTPUT:
+    </h1>
+    <app-level-card-list>
+    </app-level-card-list>
+</div>

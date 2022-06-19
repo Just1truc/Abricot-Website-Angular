@@ -1,0 +1,43 @@
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@media only screen and (max-width: 500px) {
+    .size-it {
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .size-it {
+        font-size: 30px;
+    }
+}
+
+.chooseFile {
+    border: solid black 5px;
+    border-style: dashed;
+    background-color: rgb(226, 226, 226);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    border-radius: 7px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+}

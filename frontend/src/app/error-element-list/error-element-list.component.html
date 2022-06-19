@@ -1,0 +1,3 @@
+<app-error-element *ngFor="let key of errorArray" [errorObject]="key">
+</app-error-element>
+<h1 class="error-name">{{errorArray.length === 0 ? 'No error' : ''}}</h1>

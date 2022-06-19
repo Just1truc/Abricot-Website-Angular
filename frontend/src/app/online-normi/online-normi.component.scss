@@ -1,0 +1,36 @@
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.chooseFile {
+    background-color: #729ea1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    border-radius: 7px;
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(136, 182, 189);
+    }
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.button-style {
+    &:active {
+        transform: scale(0.8);
+    }
+}

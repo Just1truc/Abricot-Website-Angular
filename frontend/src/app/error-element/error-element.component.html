@@ -1,0 +1,2 @@
+<h1 class="error-name"> [{{errorObject.name}} : {{errorObject.description}} ]</h1>
+<p class="error-paths" *ngFor="let obj of errorObject.list"> > {{obj.file}} {{obj.line !== "" ? ': line : ' + obj.line : ''}}</p>

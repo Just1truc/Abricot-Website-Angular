@@ -1,0 +1,3 @@
+<div (mouseover)="hover=true" (mouseleave)="hover=false" class="card-out-style sherif-Sans sus-it cursor" [ngStyle]="{'backgroundColor': level.cardColor, 'color' : level.textColor, 'opacity': hover==true ? '0.8' : '1'}" style="font-weight: bold" (click)="openMd()">
+    {{level.level}} : {{level.numberOferrors}}
+</div>

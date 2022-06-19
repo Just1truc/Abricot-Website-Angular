@@ -1,0 +1,16 @@
+.card-out-style {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+    .sus-it {
+        width: 300px;
+        height: 150px;
+    }
+}
