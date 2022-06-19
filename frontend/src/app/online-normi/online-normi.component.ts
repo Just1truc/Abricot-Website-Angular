@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { OutputCardService } from '../services/output-card.service';
 import { LevelCardModel } from '../models/level-card.model';
 
@@ -14,7 +14,7 @@ export class OnlineNormiComponent implements OnInit {
   selectedFolder!: File;
   folderName!: string;
 
-  baseApiUrl = "https://astounding-capybara-79066f.netlify.app/check-norme";
+  baseApiUrl = "http://hopeful-poincare.51-38-225-77.plesk.page/check-norme";
 
   constructor(
     private http: HttpClient,
@@ -73,7 +73,10 @@ export class OnlineNormiComponent implements OnInit {
         newFormData.append("file", file, file.name);
         this.http.post(this.baseApiUrl, newFormData, {
           reportProgress: true,
-          observe: 'events'
+          observe: 'events',
+          headers : new HttpHeaders({
+            'Access-Control-Allow-Origin':'*'
+          })
         })
         .subscribe((result: any) => {
           if (result.body) {
