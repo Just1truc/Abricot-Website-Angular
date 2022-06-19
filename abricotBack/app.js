@@ -51,6 +51,8 @@ router.post('/check-norme', type, (req, res, next) => {
 //    console.log(`Server running boi on port ${process.env.PORT || 3000}`);
 //})
 
-app.use('/.netlify/functions/api', router);
+app.use('/', router);
 
+
+module.exports = app;
 module.exports.handler = serverless(app);
