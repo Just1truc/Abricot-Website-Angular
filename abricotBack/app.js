@@ -4,6 +4,7 @@ const multer = require('multer');
 const upload = multer({dest: 'uploads/'});
 var { PythonShell } = require('python-shell');
 const fs = require('fs');
+const cors = require('cors');
 const app = express();
 const {
     untarFile
@@ -15,13 +16,9 @@ dotenv.config();
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        next();
-    }
-);
+app.use(cors({
+    origin: '*'
+}));
 
 const getRandomName = () => {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
