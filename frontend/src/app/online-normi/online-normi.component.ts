@@ -14,7 +14,7 @@ export class OnlineNormiComponent implements OnInit {
   selectedFolder!: File;
   folderName!: string;
 
-  baseApiUrl = "http://localhost:3000/check-norme";
+  baseApiUrl = "https://astounding-capybara-79066f.netlify.app/check-norme";
 
   constructor(
     private http: HttpClient,
