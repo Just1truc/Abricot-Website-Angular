@@ -23,6 +23,11 @@ const getRandomName = () => {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 
+router.get('/test', (req, res) => {
+    res.json({
+        "msg" : "Cringe ptn"
+    })
+})
 
 router.post('/check-norme', type, (req, res, next) => {
     var randomName = getRandomName();
