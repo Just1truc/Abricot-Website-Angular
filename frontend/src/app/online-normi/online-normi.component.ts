@@ -73,10 +73,7 @@ export class OnlineNormiComponent implements OnInit {
         newFormData.append("file", file, file.name);
         this.http.post(this.baseApiUrl, newFormData, {
           reportProgress: true,
-          observe: 'events',
-          headers : new HttpHeaders({
-            'Access-Control-Allow-Origin':'*'
-          })
+          observe: 'events'
         })
         .subscribe((result: any) => {
           if (result.body) {
