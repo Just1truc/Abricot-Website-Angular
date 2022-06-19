@@ -14,7 +14,7 @@ export class OnlineNormiComponent implements OnInit {
   selectedFolder!: File;
   folderName!: string;
 
-  baseApiUrl = "http://hopeful-poincare.51-38-225-77.plesk.page/check-norme";
+  baseApiUrl = "https://hopeful-poincare.51-38-225-77.plesk.page/check-norme";
 
   constructor(
     private http: HttpClient,
