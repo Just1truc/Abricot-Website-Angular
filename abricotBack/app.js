@@ -46,6 +46,4 @@ app.post('/check-norme', type, (req, res, next) => {
 //    console.log(`Server running boi on port ${process.env.PORT || 3000}`);
 //})
 
-module.exports = app;
-
 module.exports.handler = serverless(app);
