@@ -15,7 +15,7 @@ export class OnlineNormiComponent implements OnInit {
   folderName!: string;
   formData!:FormData;
 
-  baseApiUrl = "http://gallant-brattain.51-38-225-77.plesk.page/check-norme";
+  baseApiUrl = "https://gallant-brattain.51-38-225-77.plesk.page/check-norme";
 
   constructor(
     private http: HttpClient,
