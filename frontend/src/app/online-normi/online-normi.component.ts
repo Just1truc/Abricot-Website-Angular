@@ -13,8 +13,9 @@ export class OnlineNormiComponent implements OnInit {
 
   selectedFolder!: File;
   folderName!: string;
+  formData!:FormData;
 
-  baseApiUrl = "https://hopeful-poincare.51-38-225-77.plesk.page/check-norme";
+  baseApiUrl = "http://gallant-brattain.51-38-225-77.plesk.page/check-norme";
 
   constructor(
     private http: HttpClient,
@@ -65,19 +66,20 @@ export class OnlineNormiComponent implements OnInit {
     });
     this.selectedFolder = event[0];
     this.folderName = this.selectedFolder.name;
+    this.formData = new FormData();
+    this.formData.append("file", this.selectedFolder, this.folderName);
   }
 
   onFileSelected(file: File) {
     if (file) {
-        const newFormData:FormData = new FormData();
-        newFormData.append("file", file, file.name);
-        this.http.post(this.baseApiUrl, newFormData, {
+        this.http.post(this.baseApiUrl, this.formData, {
           reportProgress: true,
           observe: 'events'
         })
         .subscribe((result: any) => {
           if (result.body) {
             result.body = JSON.parse(result.body);
+            console.log(result.body);
             this.outputService.levelCards.forEach((card : LevelCardModel) => {
               card.numberOferrors = result.body[card.level.toLowerCase()].count;
               card.list = result.body[card.level.toLowerCase()].list;
