@@ -34,3 +34,7 @@
         transform: scale(0.8);
     }
 }
+
+:host ::ng-deep .custom-spinner circle{   
+    stroke: black;
+}

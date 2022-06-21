@@ -21,6 +21,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { ErrorElementComponent } from './error-element/error-element.component';
 import { ErrorElementListComponent } from './error-element-list/error-element-list.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { ErrorElementListComponent } from './error-element-list/error-element-li
     HttpClientModule,
     MDBBootstrapModule,
     MdbModalModule,
+    NgxSpinnerModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     })

@@ -1,16 +1,10 @@
-from dataclasses import replace
 import subprocess
-from copyreg import constructor
 import os
 import sys
 import os.path
 from os import path
 import re
 from json import JSONEncoder
-from termios import CREAD
-from webbrowser import get
-
-from ldap3 import BASE
 
 def print_error(file, error_type, error_tuple, rule):
     pattern = "  {color}[{error_type}] ({error_name}){endcolor} - {message}\033[90m{fileinfo}\033[0m"
@@ -665,13 +659,16 @@ class Check_Include:
         self.active = True
         self.checked = True
 
-    def run(self, files, rule):
+    def run(self, files, rule, Norm_obj):
         if self.active == True:
             tot = []
             for dos in os.listdir(files):
                 if ((".h" in dos) != True):
-                    tot.append(('G6', "Include folder should only contain .h files.", dos.replace("./", "")))
-            if len(tot) > 0:
+                    if Norm_obj.json_rule:
+                        Norm_obj.major.append(('G6', "Include folder should only contain .h files.", dos.replace("./", "")))
+                    else:
+                        tot.append(('G6', "Include folder should only contain .h files.", dos.replace("./", "")))
+            if len(tot) > 0 and Norm_obj.json_rule != True:
                 er = 1
                 print("\033[1m‣ In Include\n")
                 for i in tot:
@@ -829,7 +826,7 @@ class Norms:
                 ## Checking include because specifics rule applies to this folder
                 if (files == "include"):
                     inc = Check_Include()
-                    inc.run(test, self.rule)
+                    inc.run(test, self.rule, self)
 
                 # Checking 04 and 01 and putting errors in bad files
                 obj = self.organisation_norms

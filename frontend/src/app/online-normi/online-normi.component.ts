@@ -14,6 +14,8 @@ export class OnlineNormiComponent implements OnInit {
   selectedFolder!: File;
   folderName!: string;
   formData!:FormData;
+  outputStatus!:boolean;
+  buttonStatus!:boolean;
 
   baseApiUrl = "https://gallant-brattain.51-38-225-77.plesk.page/check-norme";
 
@@ -23,6 +25,8 @@ export class OnlineNormiComponent implements OnInit {
     private outputService : OutputCardService) { }
 
   ngOnInit(): void {
+      this.outputStatus = false;
+      this.buttonStatus = false;
   }
 
   onStart(): void {
@@ -72,6 +76,8 @@ export class OnlineNormiComponent implements OnInit {
 
   onFileSelected(file: File) {
     if (file) {
+        this.buttonStatus = true;
+        this.outputStatus = true;
         this.http.post(this.baseApiUrl, this.formData, {
           reportProgress: true,
           observe: 'events'
@@ -89,6 +95,8 @@ export class OnlineNormiComponent implements OnInit {
               progressBar: true,
               closeButton: true
             });
+            this.outputStatus = false;
+            this.buttonStatus = false;
           }
         },
         () => {

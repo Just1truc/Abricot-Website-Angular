@@ -4,7 +4,7 @@
 </div>
 <div style="display:flex; width:100%; justify-content: center; align-items: center; flex-wrap: wrap;">
     <h3 class="sherif-Sans" style="font-weight:400;">Selected folder : {{folderName || "No folder selected yet"}}</h3>
-    <button class="cringeButton button-style" style="margin: 30px" (click)="onStart()">
+    <button class="cringeButton button-style" [disabled]="buttonStatus" style="margin: 30px" (click)="onStart()">
         Start
     </button>
 </div>
@@ -12,6 +12,13 @@
     <h1 class="title sherif-Sans">
         OUTPUT:
     </h1>
-    <app-level-card-list>
+    <app-level-card-list *ngIf="!outputStatus">
     </app-level-card-list>
+    <div style="display:flex; width:100%; justify-content: center; align-content: center;">
+        <mat-spinner *ngIf="outputStatus"
+            color="blue"
+            diameter="50"
+            class="custom-spinner"
+        ></mat-spinner>
+    </div>
 </div>
