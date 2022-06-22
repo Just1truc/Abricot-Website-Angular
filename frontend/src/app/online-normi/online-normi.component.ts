@@ -101,6 +101,8 @@ export class OnlineNormiComponent implements OnInit {
         },
         () => {
           this.toastr.error("Backend server can't be reached", 'Error');
+          this.outputStatus = false;
+          this.buttonStatus = false;
         })
     }
 }
